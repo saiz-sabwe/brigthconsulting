@@ -19,8 +19,36 @@ class IndexController extends AbstractController
     #[Route('/', name: 'app_index')]
     public function index(): Response
     {
-        return $this->render('index.html.twig');
+        $services = [
+            [
+                'titre' => 'Conseil en stratégie',
+                'description' => 'Aide les entreprises à définir leurs objectifs stratégiques et à élaborer des plans pour les atteindre.',
+                'icon' => 'img/demos/business-consulting-3/icons/blackboard.svg'
+            ],
+            [
+                'titre' => 'Consulting en management',
+                'description' => 'Accompagnement dans l\'amélioration des processus organisationnels, de la gestion du changement ou du développement des leaders.',
+                'icon' => 'img/demos/business-consulting-3/icons/weight-balance.svg'
+            ],
+            [
+                'titre' => 'Consulting en ressources humaines',
+                'description' => 'Services liés à la gestion des talents, à la culture d\'entreprise, au recrutement ou à la formation.',
+                'icon' => 'img/demos/business-consulting-3/icons/blackboard.svg'
+            ],
+            [
+                'titre' => 'Conseil en finance',
+                'description' => 'Analyse financière, gestion des coûts, évaluation des performances financières ou aide à la levée de fonds.',
+                'icon' => 'img/demos/business-consulting-3/icons/weight-balance.svg'
+            ]
+        ];
+
+        return $this->render('index.html.twig', [
+            'services' => $services,
+        ]);
+//        return $this->render('index.html.twig');
     }
+
+
 
     #[Route('/about', name: 'app_about')]
     public function about(): Response
@@ -38,12 +66,6 @@ class IndexController extends AbstractController
     public function contact(): Response
     {
         return $this->render('cases.html.twig');
-    }
-
-    #[Route('/services', name: 'app_services')]
-    public function services(): Response
-    {
-        return $this->render('services.html.twig');
     }
 
     #[Route('/blog', name: 'app_blog')]
