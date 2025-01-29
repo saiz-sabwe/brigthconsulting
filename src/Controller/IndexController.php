@@ -21,7 +21,7 @@ class IndexController extends AbstractController
     {
         $services = [
             [
-                'titre' => 'Conseil en stratégie',
+                'titre' => 'Sos Consulte',
                 'description' => 'Aide les entreprises à définir leurs objectifs stratégiques et à élaborer des plans pour les atteindre.',
                 'icon' => 'img/demos/business-consulting-3/icons/blackboard.svg'
             ],
